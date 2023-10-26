@@ -2,6 +2,8 @@ const express = require("express");
 const http = require("http");
 const { rateLimit } = require("express-rate-limit");
 const { initializeAPI } = require("./api");
+const rotatingLogFileModule = require('@vrbo/pino-rotating-file');
+console.log(rotatingLogFileModule);
 
 // Create the express server
 const app = express();
@@ -20,7 +22,7 @@ const server = http.createServer(app);
 app.use(express.static("client"));
 // route for the homepage
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/client/index.html");
+  res.sendFile(__dirnamedirname + "/client/scripts/index.html");
 });
 
 // Initialize the REST api
